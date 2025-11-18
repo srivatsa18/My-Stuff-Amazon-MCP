@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "esxi": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\Claude\\Exsi-mcp\\exsi-mcp-server.py"
+      ]
+    },
+    "Amazon": {
+      "command": "uvx",
+      "args": [
+        "amazon-mcp"
+      ]
+    },
+    "Fewsats": {
+      "command": "uvx",
+      "args": [
+        "fewsats-mcp"
+      ]
+    }
+  }
+}
