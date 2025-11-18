@@ -54,6 +54,72 @@ The server can be configured through environment variables:
 - `AWS_SECRET_ACCESS_KEY`: AWS secret access key
 - `MCP_SERVER_PORT`: Port to run the MCP server on (default: 8000)
 
+### Claude Desktop Configuration
+
+To use this MCP server with Claude Desktop, add the following configuration to your `claude_desktop_config.json` file:
+
+```json
+{
+  "mcpServers": {
+    "Amazon": {
+      "command": "uvx",
+      "args": [
+        "amazon-mcp"
+      ]
+    }
+  }
+}
+```
+
+**Alternative configurations:**
+
+For local development with the server file:
+```json
+{
+  "mcpServers": {
+    "Amazon": {
+      "command": "python",
+      "args": [
+        "path/to/amazon-mcp-server.py"
+      ]
+    }
+  }
+}
+```
+
+**Complete example configuration** (including multiple MCP servers):
+```json
+{
+  "mcpServers": {
+    "esxi": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\Claude\\Exsi-mcp\\exsi-mcp-server.py"
+      ]
+    },
+    "Amazon": {
+      "command": "uvx",
+      "args": [
+        "amazon-mcp"
+      ]
+    },
+    "Fewsats": {
+      "command": "uvx",
+      "args": [
+        "fewsats-mcp"
+      ]
+    }
+  }
+}
+```
+
+**Configuration file locations:**
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
+
+After updating the configuration file, restart Claude Desktop for changes to take effect.
+
 ## Supported Amazon Services
 
 - **S3**: Object storage operations
